@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise5.2_5.3", "Exercise5.2\Exercise5.2_5.3.csproj", "{C234D100-BD4B-4A4F-9C90-ED64F5FB9600}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayStation", "PayStation\PayStation.csproj", "{C234D100-BD4B-4A4F-9C90-ED64F5FB9600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise5.4", "Exercise5.4\Exercise5.4.csproj", "{23DE9F2C-EA72-4AA9-A392-7E8FB9242311}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breakthrough", "Breakthrough\Breakthrough.csproj", "{23DE9F2C-EA72-4AA9-A392-7E8FB9242311}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

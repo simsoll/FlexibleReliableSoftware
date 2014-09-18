@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercise5._2
+namespace PayStation
 {
     public class IllegalCoinException : Exception
     {

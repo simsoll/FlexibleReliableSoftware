@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting;
 
-namespace Exercise5._4
+namespace Breakthrough
 {
     public class Breakthrough : IBreakthrough
     {

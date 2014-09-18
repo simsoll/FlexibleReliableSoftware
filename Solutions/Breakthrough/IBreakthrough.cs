@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercise5._4
+namespace Breakthrough
 {
     /** Enumeration of the three types of 'pieces' that
     is possible on a given location on the chess board:

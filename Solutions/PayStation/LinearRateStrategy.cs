@@ -1,6 +1,6 @@
-﻿namespace Exercise5._2
+﻿namespace PayStation
 {
-    public class EnglishCalculateRateStrategy : ICalculateRateStrategy
+    public class LinearRateStrategy : ICalculateRateStrategy
     {
         public int CalculateRate(int coinValue)
         {

@@ -61,10 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DanishCalculateRateStrategy.cs" />
-    <Compile Include="DanishCoinValidationStrategy.cs" />
-    <Compile Include="EnglishCalculateRateStrategy.cs" />
-    <Compile Include="EnglishCoinValidationStrategy.cs" />
+    <Compile Include="ProgressiveRateStrategy.cs" />
+    <Compile Include="DKCoinValidationStrategy.cs" />
+    <Compile Include="LinearRateStrategy.cs" />
+    <Compile Include="USCoinValidationStrategy.cs" />
     <Compile Include="ICalculateRateStrategy.cs" />
     <Compile Include="ICoinValidationStrategy.cs" />
     <Compile Include="IllegalCoinException.cs" />

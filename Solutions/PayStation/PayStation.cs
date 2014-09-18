@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace Exercise5._2
+namespace PayStation
 {
     public class PayStation : IPayStation
     {

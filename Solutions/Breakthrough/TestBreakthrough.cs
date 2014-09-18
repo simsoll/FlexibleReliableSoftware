@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace Exercise5._4
+namespace Breakthrough
 {
     [TestFixture]
     public class TestBreakthrough

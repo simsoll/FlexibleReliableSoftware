@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercise5._2
+namespace PayStation
 {
     internal class Program
     {

@@ -1,13 +1,11 @@
-namespace Exercise5._2
+namespace PayStation
 {
-    public class DanishCoinValidationStrategy : ICoinValidationStrategy
+    public class USCoinValidationStrategy : ICoinValidationStrategy
     {
         public bool IsCoinValid(int coinValue)
         {
             switch (coinValue)
             {
-                case 1:
-                case 2:
                 case 5:
                 case 10:
                 case 25:

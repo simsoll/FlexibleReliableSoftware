@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Exercise5._2
+namespace PayStation
 {
     public interface IPayStation
     {

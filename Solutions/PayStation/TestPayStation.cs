@@ -6,7 +6,7 @@ using System.Runtime;
 using System.Text;
 using NUnit.Framework;
 
-namespace Exercise5._2
+namespace PayStation
 {
     [TestFixture]
     public class TestPayStation
@@ -16,7 +16,7 @@ namespace Exercise5._2
         [SetUp]
         public void Init()
         {
-            _ps = new PayStation();
+            _ps = new PayStation(new USCoinValidationStrategy(), new LinearRateStrategy());
         }
 
         [TearDown]

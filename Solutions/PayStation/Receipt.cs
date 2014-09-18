@@ -1,4 +1,4 @@
-﻿namespace Exercise5._2
+﻿namespace PayStation
 {
     public class Receipt : IReceipt
     {
