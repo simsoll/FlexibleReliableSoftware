@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DanishCalculateRateStrategy.cs" />
+    <Compile Include="DanishCoinValidationStrategy.cs" />
+    <Compile Include="EnglishCalculateRateStrategy.cs" />
+    <Compile Include="EnglishCoinValidationStrategy.cs" />
+    <Compile Include="ICalculateRateStrategy.cs" />
+    <Compile Include="ICoinValidationStrategy.cs" />
     <Compile Include="IllegalCoinException.cs" />
     <Compile Include="IPayStation.cs" />
     <Compile Include="IReceipt.cs" />

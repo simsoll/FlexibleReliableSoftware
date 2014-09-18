@@ -8,28 +8,25 @@ namespace Exercise5._2
         private int _coinAmount;
         private int _minutes;
         private IDictionary<int,int> _insertedCoins = new Dictionary<int, int>();
+        private ICoinValidationStrategy _coinValidationStrategy = new EnglishCoinValidationStrategy();
+        private ICalculateRateStrategy _calculateRateStrategy = new EnglishCalculateRateStrategy();
 
         public void AddPayment(int coinValue)
         {
-            switch (coinValue)
+            if (!_coinValidationStrategy.IsCoinValid(coinValue))
             {
-                case 5:
-                case 10:
-                case 25:
-                    break;
-                default:
-                    throw new IllegalCoinException("Illegal coin value: " + coinValue);
+                throw new IllegalCoinException("Illegal coin value: " + coinValue);
             }
 
             _coinAmount += coinValue;
-            _minutes = CoinAmountToMinutes(_coinAmount);
+            _minutes = _calculateRateStrategy.CalculateRate(_coinAmount);
 
             _insertedCoins = IncrementCoinAdded(_insertedCoins, coinValue);
         }
 
         public int ReadDisplay()
         {
-            return CoinAmountToMinutes(_coinAmount);
+            return _calculateRateStrategy.CalculateRate(_coinAmount);
         }
 
         public IReceipt Buy()
@@ -44,11 +41,6 @@ namespace Exercise5._2
             var insertedCoins = _insertedCoins;
             Reset();
             return insertedCoins;
-        }
-
-        private int CoinAmountToMinutes(int coin)
-        {
-            return coin/5*2;
         }
 
         private IDictionary<int, int> IncrementCoinAdded(IDictionary<int,int> insertedCoins, int coin)
