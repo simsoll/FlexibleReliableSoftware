@@ -1,0 +1,6 @@
+accept legal coin
+5 cents should give 2 minutes parking time
+reject illegal coin
+readDisplay
+buy produces valid receipt
+cancel resets pay station
