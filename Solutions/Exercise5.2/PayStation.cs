@@ -8,8 +8,14 @@ namespace Exercise5._2
         private int _coinAmount;
         private int _minutes;
         private IDictionary<int,int> _insertedCoins = new Dictionary<int, int>();
-        private ICoinValidationStrategy _coinValidationStrategy = new EnglishCoinValidationStrategy();
-        private ICalculateRateStrategy _calculateRateStrategy = new EnglishCalculateRateStrategy();
+        private ICoinValidationStrategy _coinValidationStrategy;
+        private ICalculateRateStrategy _calculateRateStrategy;
+
+        public PayStation(ICoinValidationStrategy coinValidationStrategy, ICalculateRateStrategy calculateRateStrategy)
+        {
+            _coinValidationStrategy = coinValidationStrategy;
+            _calculateRateStrategy = calculateRateStrategy;
+        }
 
         public void AddPayment(int coinValue)
         {
