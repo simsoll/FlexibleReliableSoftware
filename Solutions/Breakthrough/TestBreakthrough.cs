@@ -11,7 +11,7 @@ namespace Breakthrough
         [SetUp]
         public void SetUp()
         {
-            _game = new Breakthrough();
+            _game = new Breakthrough(new StandardMovementStrategy());
         }
 
         [Test]

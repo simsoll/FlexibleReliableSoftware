@@ -12,9 +12,11 @@ namespace Breakthrough
         private PieceType[,] _board;
         private PlayerType _currentPlayer;
 
+        private IMovementStrategy _movementStrategy;
 
-        public Breakthrough()
+        public Breakthrough(IMovementStrategy movementStrategy)
         {
+            _movementStrategy = movementStrategy;
             InitializeBoard();
             _currentPlayer = PlayerType.White;
         }
@@ -54,11 +56,9 @@ namespace Breakthrough
             int toRow, int toColumn)
         {
             if (IsOutOfBounds(fromRow, fromColumn, toRow, toColumn)) return false;
-            if (IsJumping(fromRow, fromColumn, toRow, toColumn)) return false;
-            if (!IsOriginValid(fromRow, fromColumn)) return false;
-            if (!IsMovingForward(fromRow, toRow)) return false;
 
-            return IsDestinationValid(fromColumn, toRow, toColumn);
+            return _movementStrategy.IsMoveValid(fromRow, fromColumn, toRow, toColumn, GetPieceAt(fromRow, fromColumn),
+                GetPieceAt(toRow, toColumn), GetPlayerInTurn());
         }
 
         public void Move(int fromRow, int fromColumn,
@@ -95,49 +95,6 @@ namespace Breakthrough
             }
         }
 
-        private bool IsDestinationValid(int fromColumn, int toRow, int toColumn)
-        {
-            switch (GetPlayerInTurn())
-            {
-                case PlayerType.Black:
-                    if (fromColumn != toColumn && GetPieceAt(toRow, toColumn) != PieceType.Black) return true;
-                    if (fromColumn == toColumn && GetPieceAt(toRow, toColumn) == PieceType.None) return true;
-                    break;
-                case PlayerType.White:
-                    if (fromColumn != toColumn && GetPieceAt(toRow, toColumn) != PieceType.White) return true;
-                    if (fromColumn == toColumn && GetPieceAt(toRow, toColumn) == PieceType.None) return true;
-                    break;
-            }
-            return false;
-        }
-
-        private bool IsMovingForward(int fromRow, int toRow)
-        {
-            if (GetPlayerInTurn() == PlayerType.Black && fromRow < toRow) return true;
-            if (GetPlayerInTurn() == PlayerType.White && toRow < fromRow) return true;
-            return false;
-        }
-
-        private bool IsOriginValid(int fromRow, int fromColumn)
-        {
-            switch (GetPlayerInTurn())
-            {
-                case PlayerType.Black:
-                    if (GetPieceAt(fromRow, fromColumn) != PieceType.Black) return false;
-                    break;
-                case PlayerType.White:
-                    if (GetPieceAt(fromRow, fromColumn) != PieceType.White) return false;
-                    break;
-            }
-            return true;
-        }
-
-        private bool IsJumping(int fromRow, int fromColumn, int toRow, int toColumn)
-        {
-            if (Math.Abs(fromRow - toRow) > 1) return true;
-            if (Math.Abs(fromColumn - toColumn) > 1) return true;
-            return false;
-        }
 
         private bool IsOutOfBounds(int fromRow, int fromColumn, int toRow, int toColumn)
         {

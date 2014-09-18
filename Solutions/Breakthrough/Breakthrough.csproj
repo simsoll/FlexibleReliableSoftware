@@ -62,9 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Breakthrough.cs" />
+    <Compile Include="JumpAllowedMovementStrategy.cs" />
     <Compile Include="IBreakthrough.cs" />
+    <Compile Include="IMovementStrategy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StandardMovementStrategy.cs" />
     <Compile Include="TestBreakthrough.cs" />
   </ItemGroup>
   <ItemGroup>
