@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime;
 using NUnit.Framework;
 
 namespace Breakthrough
@@ -118,6 +119,14 @@ namespace Breakthrough
             _game.Move(2, 7, 1, 6);
             _game.Move(1, 6, 0, 7);
             Assert.That(_game.GetWinner(), Is.EqualTo(PlayerType.White));
+        }
+
+        [Test]
+        public void ShouldBeAllowedToJump()
+        {
+            var movementStrategy = new JumpAllowedMovementStrategy();
+
+            Assert.That(movementStrategy.IsMoveValid(1, 5, 3, 5, PieceType.Black, PieceType.None, PlayerType.Black));
         }
     }
 }
