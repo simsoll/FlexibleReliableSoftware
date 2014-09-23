@@ -1,10 +1,10 @@
 ﻿namespace PayStation
 {
-    public class Receipt : IReceipt
+    public class StandardReceipt : IReceipt
     {
         private readonly int _value;
 
-        public Receipt(int value)
+        public StandardReceipt(int value)
         {
             _value = value;
         }

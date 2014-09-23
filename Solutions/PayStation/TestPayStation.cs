@@ -16,7 +16,7 @@ namespace PayStation
         [SetUp]
         public void Init()
         {
-            _ps = new PayStation(new USCoinValidationStrategy(), new LinearRateStrategy());
+            _ps = new PayStation(new AlphaTownFactory());
         }
 
         [TearDown]

@@ -10,3 +10,15 @@ C:\Users\Simon\Documents\Projects\Flexible, reliable software\Solutions_CSharp\S
 C:\Users\Simon\Documents\Projects\Flexible, reliable software\Solutions_CSharp\Solutions\PayStation\bin\Debug\nunit.util.dll
 C:\Users\Simon\Documents\Projects\Flexible, reliable software\Solutions_CSharp\Solutions\PayStation\bin\Debug\NUnit.VisualStudio.TestAdapter.dll
 C:\Users\Simon\Documents\Projects\Flexible, reliable software\Solutions_CSharp\Solutions\PayStation\bin\Debug\nunit.framework.xml
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\obj\Debug\PayStation.csprojResolveAssemblyReference.cache
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\obj\Debug\Exercise5.2.exe
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\bin\Debug\Exercise5.2.exe.config
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\bin\Debug\Exercise5.2.exe
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\bin\Debug\Exercise5.2.pdb
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\bin\Debug\nunit.core.dll
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\bin\Debug\nunit.core.interfaces.dll
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\bin\Debug\nunit.framework.dll
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\bin\Debug\nunit.util.dll
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\bin\Debug\NUnit.VisualStudio.TestAdapter.dll
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\bin\Debug\nunit.framework.xml
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\PayStation\obj\Debug\Exercise5.2.pdb

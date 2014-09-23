@@ -8,13 +8,16 @@ namespace PayStation
         private int _coinAmount;
         private int _minutes;
         private IDictionary<int,int> _insertedCoins = new Dictionary<int, int>();
-        private ICoinValidationStrategy _coinValidationStrategy;
-        private IRateStrategy _rateStrategy;
+        private readonly IPayStationFactory _payStationFactory;
+        private readonly ICoinValidationStrategy _coinValidationStrategy;
+        private readonly IRateStrategy _rateStrategy;
 
-        public PayStation(ICoinValidationStrategy coinValidationStrategy, IRateStrategy rateStrategy)
+        public PayStation(IPayStationFactory payStationFactory)
         {
-            _coinValidationStrategy = coinValidationStrategy;
-            _rateStrategy = rateStrategy;
+            _payStationFactory = payStationFactory;
+
+            _coinValidationStrategy = _payStationFactory.CreateCoinValidationStrategy();
+            _rateStrategy = _payStationFactory.CreateRateStrategy();
         }
 
         public void AddPayment(int coinValue)
@@ -37,7 +40,7 @@ namespace PayStation
 
         public IReceipt Buy()
         {
-            IReceipt receipt = new Receipt(_minutes);
+            IReceipt receipt = _payStationFactory.CreateReceipt(_minutes);
             Reset();
             return receipt;
         }
