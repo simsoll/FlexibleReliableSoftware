@@ -61,11 +61,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlternatingRateStrategy.cs" />
+    <Compile Include="IWeekendDecisionStrategy.cs" />
     <Compile Include="ProgressiveRateStrategy.cs" />
     <Compile Include="DKCoinValidationStrategy.cs" />
     <Compile Include="LinearRateStrategy.cs" />
     <Compile Include="USCoinValidationStrategy.cs" />
-    <Compile Include="ICalculateRateStrategy.cs" />
+    <Compile Include="IRateStrategy.cs" />
     <Compile Include="ICoinValidationStrategy.cs" />
     <Compile Include="IllegalCoinException.cs" />
     <Compile Include="IPayStation.cs" />

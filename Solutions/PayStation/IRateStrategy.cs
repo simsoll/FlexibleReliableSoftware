@@ -1,6 +1,6 @@
 ﻿namespace PayStation
 {
-    public interface ICalculateRateStrategy
+    public interface IRateStrategy
     {
         int CalculateRate(int coinValue);
     }

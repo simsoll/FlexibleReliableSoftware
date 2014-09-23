@@ -2,7 +2,7 @@
 
 namespace PayStation
 {
-    public class ProgressiveRateStrategy : ICalculateRateStrategy
+    public class ProgressiveRateStrategy : IRateStrategy
     {
         public int CalculateRate(int coinValue)
         {

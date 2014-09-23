@@ -1,6 +1,6 @@
 ﻿namespace PayStation
 {
-    public class LinearRateStrategy : ICalculateRateStrategy
+    public class LinearRateStrategy : IRateStrategy
     {
         public int CalculateRate(int coinValue)
         {
