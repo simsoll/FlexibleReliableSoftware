@@ -11,5 +11,7 @@ namespace PayStation
         IReceipt Buy();
 
         IDictionary<int, int> Cancel();
+
+        void ReConfigure(IPayStationFactory payStationFactory);
     }
 }

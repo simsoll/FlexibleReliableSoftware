@@ -8,18 +8,14 @@ namespace PayStation
         private int _coinAmount;
         private int _minutes;
         private IDictionary<int,int> _insertedCoins = new Dictionary<int, int>();
-        private readonly IPayStationFactory _payStationFactory;
-        private readonly ICoinValidationStrategy _coinValidationStrategy;
-        private readonly IRateStrategy _rateStrategy;
-        private readonly IDisplayStrategy _displayStrategy;
+        private IPayStationFactory _payStationFactory;
+        private ICoinValidationStrategy _coinValidationStrategy;
+        private IRateStrategy _rateStrategy;
+        private IDisplayStrategy _displayStrategy;
 
         public PayStation(IPayStationFactory payStationFactory)
         {
-            _payStationFactory = payStationFactory;
-
-            _coinValidationStrategy = _payStationFactory.CreateCoinValidationStrategy();
-            _rateStrategy = _payStationFactory.CreateRateStrategy();
-            _displayStrategy = _payStationFactory.CreateDisplayStrategy();
+            ReConfigure(payStationFactory);
         }
 
         public void AddPayment(int coinValue)
@@ -52,6 +48,15 @@ namespace PayStation
             var insertedCoins = _insertedCoins;
             Reset();
             return insertedCoins;
+        }
+
+        public void ReConfigure(IPayStationFactory payStationFactory)
+        {
+            _payStationFactory = payStationFactory;
+
+            _coinValidationStrategy = _payStationFactory.CreateCoinValidationStrategy();
+            _rateStrategy = _payStationFactory.CreateRateStrategy();
+            _displayStrategy = _payStationFactory.CreateDisplayStrategy();
         }
 
         private IDictionary<int, int> IncrementCoinAdded(IDictionary<int,int> insertedCoins, int coin)
