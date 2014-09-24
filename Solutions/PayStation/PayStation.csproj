@@ -83,11 +83,12 @@
     <Compile Include="PayStationFactories\BetaTownFactory.cs" />
     <Compile Include="PayStationFactories\GammaTownFactory.cs" />
     <Compile Include="PayStationFactories\IPayStationFactory.cs" />
+    <Compile Include="PayStationFactories\TestAlphaTownFactory.cs" />
     <Compile Include="RateStrategies\AlternatingRateStrategy.cs" />
     <Compile Include="Receipts\ExpensiveReceipt.cs" />
-    <Compile Include="WeekendDecisionStrategies\ClockBasedDecisionStrategy.cs" />
-    <Compile Include="WeekendDecisionStrategies\FixedBasedDecisionStrategy.cs" />
-    <Compile Include="WeekendDecisionStrategies\IWeekendDecisionStrategy.cs" />
+    <Compile Include="DateTimeStrategies\ClockBasedDateTimeStrategy.cs" />
+    <Compile Include="DateTimeStrategies\FixedBasedDateTimeStrategy.cs" />
+    <Compile Include="DateTimeStrategies\IDateTimeStrategy.cs" />
     <Compile Include="RateStrategies\ProgressiveRateStrategy.cs" />
     <Compile Include="CoinValidationStrategies\DKCoinValidationStrategy.cs" />
     <Compile Include="RateStrategies\LinearRateStrategy.cs" />

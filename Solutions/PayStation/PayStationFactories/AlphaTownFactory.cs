@@ -19,7 +19,7 @@ namespace PayStation
 
         public IDisplayStrategy CreateDisplayStrategy()
         {
-            return new EndTimeDisplayStrategy();
+            return new EndTimeDisplayStrategy(new ClockBasedDateTimeStrategy());
         }
     }
 }

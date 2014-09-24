@@ -1,19 +1,21 @@
-﻿namespace PayStation
+﻿using System;
+
+namespace PayStation
 {
     public class AlternatingRateStrategy : IRateStrategy
     {
         private readonly IRateStrategy _weekDayStrategy;
         private readonly IRateStrategy _weekendStrategy;
 
-        private readonly IWeekendDecisionStrategy _weekendDecisionStrategy;
+        private readonly IDateTimeStrategy _dateTimeStrategy;
 
         public AlternatingRateStrategy(IRateStrategy weekDayStrategy, IRateStrategy weekendStrategy,
-            IWeekendDecisionStrategy weekendDecisionStrategy)
+            IDateTimeStrategy dateTimeStrategy)
         {
             _weekDayStrategy = weekDayStrategy;
             _weekendStrategy = weekendStrategy;
 
-            _weekendDecisionStrategy = weekendDecisionStrategy;
+            _dateTimeStrategy = dateTimeStrategy;
         }
 
         public int CalculateRate(int coinValue)
@@ -28,7 +30,9 @@
 
         public bool IsWeekend()
         {
-            return _weekendDecisionStrategy.IsWeekend();
+            var dayOfWeek = _dateTimeStrategy.GetDateTime().DayOfWeek;
+
+            return dayOfWeek == DayOfWeek.Saturday || dayOfWeek == DayOfWeek.Sunday;
         }
     }
 }

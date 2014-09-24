@@ -1,11 +1,19 @@
+using System;
+
 namespace PayStation
 {
-    public class GammaTownFactory : IPayStationFactory
+    public class TestAlphaTownFactory : IPayStationFactory
     {
+        private readonly DateTime _dateTime;
+
+        public TestAlphaTownFactory(DateTime dateTime)
+        {
+            _dateTime = dateTime;
+        }
+
         public IRateStrategy CreateRateStrategy()
         {
-            return new AlternatingRateStrategy(new LinearRateStrategy(), new ProgressiveRateStrategy(),
-                new ClockBasedDateTimeStrategy());
+            return new LinearRateStrategy();
         }
 
         public IReceipt CreateReceipt(int parkingTimeInMinutes)
@@ -20,7 +28,7 @@ namespace PayStation
 
         public IDisplayStrategy CreateDisplayStrategy()
         {
-            return new MinuteDisplayStrategy();
+            return new EndTimeDisplayStrategy(new FixedBasedDateTimeStrategy(_dateTime));
         }
     }
 }

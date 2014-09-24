@@ -16,7 +16,7 @@ namespace PayStation
         [SetUp]
         public void Init()
         {
-            _ps = new PayStation(new AlphaTownFactory());
+            _ps = new PayStation(new TestAlphaTownFactory(new DateTime(2014, 9, 24, 10, 0, 0)));
         }
 
         [TearDown]
@@ -31,10 +31,10 @@ namespace PayStation
             _ps.AddPayment(7);
         }
 
-        [TestCase(new[] {5}, 2)]
-        [TestCase(new[] {25}, 10)]
-        [TestCase(new[] {5, 10}, 6)]
-        [TestCase(new[] {5, 10, 25}, 16)]
+        [TestCase(new[] {5}, 1002)]
+        [TestCase(new[] {25}, 1010)]
+        [TestCase(new[] {5, 10}, 1006)]
+        [TestCase(new[] {5, 10, 25}, 1016)]
         public void ShouldDisplayCorrectlyAfterCoinInserts(int[] coins, int minutes)
         {
             foreach (var coin in coins)
@@ -63,9 +63,9 @@ namespace PayStation
         public void ShouldResetDisplayWhenBuying()
         {
             _ps.AddPayment(25);
-            Assert.That(_ps.ReadDisplay(), Is.EqualTo(10));
+            Assert.That(_ps.ReadDisplay(), Is.EqualTo(1010));
             IReceipt receipt = _ps.Buy();
-            Assert.That(_ps.ReadDisplay(), Is.EqualTo(0));
+            Assert.That(_ps.ReadDisplay(), Is.EqualTo(1000));
             Assert.That(receipt.Value(), Is.EqualTo(10));
         }
 
@@ -73,11 +73,11 @@ namespace PayStation
         public void ShouldResetDisplayWhenCancel()
         {
             _ps.AddPayment(25);
-            Assert.That(_ps.ReadDisplay(), Is.EqualTo(10));
+            Assert.That(_ps.ReadDisplay(), Is.EqualTo(1010));
             _ps.Cancel();
-            Assert.That(_ps.ReadDisplay(), Is.EqualTo(0));
+            Assert.That(_ps.ReadDisplay(), Is.EqualTo(1000));
             _ps.AddPayment(5);
-            Assert.That(_ps.ReadDisplay(), Is.EqualTo(2));
+            Assert.That(_ps.ReadDisplay(), Is.EqualTo(1002));
         }
 
         [Test]
