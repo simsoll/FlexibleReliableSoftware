@@ -7,5 +7,6 @@ namespace PayStation
         IRateStrategy CreateRateStrategy();
         IReceipt CreateReceipt(int parkingTimeInMinutes);
         ICoinValidationStrategy CreateCoinValidationStrategy();
+        IDisplayStrategy CreateDisplayStrategy();
     }
 }

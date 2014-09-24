@@ -76,6 +76,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisplayStrategies\EndTimeDisplayStrategy.cs" />
+    <Compile Include="DisplayStrategies\IDisplayStrategy.cs" />
+    <Compile Include="DisplayStrategies\MinuteDisplayStrategy.cs" />
     <Compile Include="PayStationFactories\AlphaTownFactory.cs" />
     <Compile Include="PayStationFactories\BetaTownFactory.cs" />
     <Compile Include="PayStationFactories\GammaTownFactory.cs" />

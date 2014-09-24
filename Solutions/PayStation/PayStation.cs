@@ -11,6 +11,7 @@ namespace PayStation
         private readonly IPayStationFactory _payStationFactory;
         private readonly ICoinValidationStrategy _coinValidationStrategy;
         private readonly IRateStrategy _rateStrategy;
+        private readonly IDisplayStrategy _displayStrategy;
 
         public PayStation(IPayStationFactory payStationFactory)
         {
@@ -18,6 +19,7 @@ namespace PayStation
 
             _coinValidationStrategy = _payStationFactory.CreateCoinValidationStrategy();
             _rateStrategy = _payStationFactory.CreateRateStrategy();
+            _displayStrategy = _payStationFactory.CreateDisplayStrategy();
         }
 
         public void AddPayment(int coinValue)
@@ -35,7 +37,7 @@ namespace PayStation
 
         public int ReadDisplay()
         {
-            return _rateStrategy.CalculateRate(_coinAmount);
+            return _displayStrategy.CalculateOutput(_rateStrategy.CalculateRate(_coinAmount));
         }
 
         public IReceipt Buy()

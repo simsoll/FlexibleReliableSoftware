@@ -16,5 +16,10 @@ namespace PayStation
         {
             return new USCoinValidationStrategy();
         }
+
+        public IDisplayStrategy CreateDisplayStrategy()
+        {
+            return new MinuteDisplayStrategy();
+        }
     }
 }
