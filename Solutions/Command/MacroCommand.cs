@@ -10,7 +10,7 @@ namespace Command
         private readonly IList<ICommand> _commands;
 
 
-        public MacroCommand(Document document, WriteCommand[] commands)
+        public MacroCommand(Document document, IList<ICommand> commands)
         {
             _document = document;
             _commands = commands;

@@ -1,0 +1,8 @@
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\Chess\bin\Debug\Chess.exe.config
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\Chess\bin\Debug\Chess.exe
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\Chess\bin\Debug\Chess.pdb
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\Chess\obj\Debug\Chess.csprojResolveAssemblyReference.cache
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\Chess\obj\Debug\Chess.exe
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\Chess\obj\Debug\Chess.pdb
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\Chess\bin\Debug\nunit.framework.dll
+C:\Users\Simon\Documents\Projects\FlexibleReliableSoftware\Solutions_CSharp\Solutions\Chess\bin\Debug\nunit.framework.xml
