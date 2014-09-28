@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chess", "Chess\Chess.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy", "Proxy\Proxy.csproj", "{E207AB29-6674-47F3-98F1-2BE19683574B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite", "Composite\Composite.csproj", "{0ADA7408-2BC2-4AA4-8266-68E99E4D04CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{E207AB29-6674-47F3-98F1-2BE19683574B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E207AB29-6674-47F3-98F1-2BE19683574B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E207AB29-6674-47F3-98F1-2BE19683574B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ADA7408-2BC2-4AA4-8266-68E99E4D04CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ADA7408-2BC2-4AA4-8266-68E99E4D04CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ADA7408-2BC2-4AA4-8266-68E99E4D04CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ADA7408-2BC2-4AA4-8266-68E99E4D04CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
