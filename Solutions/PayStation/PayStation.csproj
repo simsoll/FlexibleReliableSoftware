@@ -76,6 +76,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Observer\IObserver.cs" />
+    <Compile Include="Observer\PayStationObserver.cs" />
     <Compile Include="PayStationDecorators\LogPayStationDecorator.cs" />
     <Compile Include="DisplayStrategies\EndTimeDisplayStrategy.cs" />
     <Compile Include="DisplayStrategies\IDisplayStrategy.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="PayStationFactories\GammaTownFactory.cs" />
     <Compile Include="PayStationFactories\IPayStationFactory.cs" />
     <Compile Include="PayStationFactories\TestAlphaTownFactory.cs" />
+    <Compile Include="PayStationFactories\TestBetaTownFactory.cs" />
     <Compile Include="RateStrategies\AlternatingRateStrategy.cs" />
     <Compile Include="Receipts\ExpensiveReceipt.cs" />
     <Compile Include="DateTimeStrategies\ClockBasedDateTimeStrategy.cs" />

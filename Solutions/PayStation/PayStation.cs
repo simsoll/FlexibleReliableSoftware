@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using PayStation.Observer;
 
 namespace PayStation
 {
@@ -12,10 +12,12 @@ namespace PayStation
         private ICoinValidationStrategy _coinValidationStrategy;
         private IRateStrategy _rateStrategy;
         private IDisplayStrategy _displayStrategy;
+        private IList<IObserver<IPayStation>> _observers; 
 
         public PayStation(IPayStationFactory payStationFactory)
         {
             ReConfigure(payStationFactory);
+            _observers = new List<IObserver<IPayStation>>();
         }
 
         public void AddPayment(int coinValue)
@@ -38,6 +40,7 @@ namespace PayStation
 
         public IReceipt Buy()
         {
+            NotifyObservers();
             IReceipt receipt = _payStationFactory.CreateReceipt(_minutes);
             Reset();
             return receipt;
@@ -80,6 +83,30 @@ namespace PayStation
             _coinAmount = 0;
             _minutes = 0;
             _insertedCoins = new Dictionary<int, int>();
+        }
+
+        public void AddObserver(IObserver<IPayStation> observer)
+        {
+            if (!_observers.Contains(observer))
+            {
+                _observers.Add(observer);
+            }
+        }
+
+        public void RemoveObserver(IObserver<IPayStation> observer)
+        {
+            if (_observers.Contains(observer))
+            {
+                _observers.Remove(observer);
+            }
+        }
+
+        public void NotifyObservers()
+        {
+            foreach (var observer in _observers)
+            {
+                observer.Update(this);
+            }
         }
     }
 }
